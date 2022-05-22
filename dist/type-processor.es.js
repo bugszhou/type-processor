@@ -26,6 +26,9 @@ var __assign = function() {
 
 var TypeProcessor = /** @class */ (function () {
     function TypeProcessor() {
+        /**
+         * 重写类型映射
+         */
         this.processorsMapping = {};
         /**
          * 覆盖老的映射关系或者新增映射关系

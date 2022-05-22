@@ -9,7 +9,7 @@ import eslint from "@rollup/plugin-eslint";
 
 const pkg = require("./package.json");
 
-const inputFileName = "typeProcessor";
+const inputFileName = "index";
 
 export default {
   input: `src/${inputFileName}.ts`,

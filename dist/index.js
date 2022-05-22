@@ -13,6 +13,9 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var TypeProcessor = /** @class */ (function () {
     function TypeProcessor() {
+        /**
+         * 重写类型映射
+         */
         this.processorsMapping = {};
         /**
          * 覆盖老的映射关系或者新增映射关系
@@ -49,4 +52,4 @@ var TypeProcessor = /** @class */ (function () {
     return TypeProcessor;
 }());
 exports.default = TypeProcessor;
-//# sourceMappingURL=typeProcessor.js.map
+//# sourceMappingURL=index.js.map
