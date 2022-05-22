@@ -24,6 +24,14 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
+var ProcessorBase = /** @class */ (function () {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    function ProcessorBase(_params) {
+        //
+    }
+    return ProcessorBase;
+}());
+
 var TypeProcessor = /** @class */ (function () {
     function TypeProcessor() {
         /**
@@ -65,5 +73,5 @@ var TypeProcessor = /** @class */ (function () {
     return TypeProcessor;
 }());
 
-export { TypeProcessor as default };
+export { ProcessorBase, TypeProcessor as default };
 //# sourceMappingURL=type-processor.es.js.map

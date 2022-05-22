@@ -11,6 +11,9 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProcessorBase = void 0;
+var ProcessorBase_1 = require("./ProcessorBase");
+exports.ProcessorBase = ProcessorBase_1.default;
 var TypeProcessor = /** @class */ (function () {
     function TypeProcessor() {
         /**

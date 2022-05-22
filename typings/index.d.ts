@@ -1,4 +1,5 @@
 import ProcessorBase, { IProcessor } from "./ProcessorBase";
+export { ProcessorBase };
 export default class TypeProcessor {
     /**
      * 重写类型映射
