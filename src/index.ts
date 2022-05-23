@@ -2,7 +2,7 @@ import ProcessorBase, { IProcessor } from "./ProcessorBase";
 
 export { ProcessorBase };
 
-export default class TypeProcessor {
+export default class TypeProcessor<IReturn = any> {
   /**
    * 重写类型映射
    */
@@ -37,9 +37,7 @@ export default class TypeProcessor {
     this.currentElement = val;
   }
 
-  getActor<IReturnType = any>(
-    params?: any,
-  ): IProcessor<IReturnType> | undefined {
+  getActor(params?: any): IProcessor<IReturn> | undefined {
     this.updateTypeMapping();
     try {
       const actor = new (this.processorsMapping[

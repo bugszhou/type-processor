@@ -1,6 +1,6 @@
 import ProcessorBase, { IProcessor } from "./ProcessorBase";
 export { ProcessorBase };
-export default class TypeProcessor {
+export default class TypeProcessor<IReturn = any> {
     /**
      * 重写类型映射
      */
@@ -13,5 +13,5 @@ export default class TypeProcessor {
     private updateTypeMapping;
     getCurrentElement(): string | number;
     setCurrentElement(val: number | string): void;
-    getActor<IReturnType = any>(params?: any): IProcessor<IReturnType> | undefined;
+    getActor(params?: any): IProcessor<IReturn> | undefined;
 }
