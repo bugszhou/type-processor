@@ -1,6 +1,6 @@
 {
     "name": "type-processor",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "use typescript develop lib",
     "author": "yiri.zhou",
     "main": "dist/type-processor.min.js",
