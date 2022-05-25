@@ -1,5 +1,6 @@
 import ProcessorBase, { IProcessor, IProcessorType } from "./ProcessorBase";
 export { ProcessorBase, IProcessorType };
+export declare type IMappingProcessor<T = typeof ProcessorBase> = IProcessorType<T extends typeof ProcessorBase ? T : any>;
 export default class TypeProcessor<IReturn = any> {
     /**
      * 重写类型映射
