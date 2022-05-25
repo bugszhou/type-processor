@@ -5,11 +5,11 @@ export default class TypeProcessor<IReturn = any> {
     /**
      * 重写类型映射
      */
-    protected processorsMapping: Record<number | string, IProcessorType<typeof ProcessorBase>>;
+    protected processorsMapping: Record<number | string, IMappingProcessor>;
     /**
      * 覆盖老的映射关系或者新增映射关系
      */
-    protected moreProcessorsMapping: Record<number | string, IProcessorType<typeof ProcessorBase>>;
+    protected moreProcessorsMapping: Record<number | string, IMappingProcessor>;
     private currentElement;
     private updateTypeMapping;
     getCurrentElement(): string | number;
