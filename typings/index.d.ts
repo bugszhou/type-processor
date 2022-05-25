@@ -1,14 +1,14 @@
-import ProcessorBase, { IProcessor } from "./ProcessorBase";
-export { ProcessorBase };
+import ProcessorBase, { IProcessor, IProcessorType } from "./ProcessorBase";
+export { ProcessorBase, IProcessorType };
 export default class TypeProcessor<IReturn = any> {
     /**
      * 重写类型映射
      */
-    protected processorsMapping: Record<number | string, typeof ProcessorBase>;
+    protected processorsMapping: Record<number | string, IProcessorType<typeof ProcessorBase>>;
     /**
      * 覆盖老的映射关系或者新增映射关系
      */
-    protected moreProcessorsMapping: Record<number | string, typeof ProcessorBase>;
+    protected moreProcessorsMapping: Record<number | string, IProcessorType<typeof ProcessorBase>>;
     private currentElement;
     private updateTypeMapping;
     getCurrentElement(): string | number;

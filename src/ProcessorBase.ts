@@ -3,11 +3,16 @@ export interface IProcessor<IReturn = any> {
   process(): IReturn | Promise<IReturn>;
 }
 
-export default abstract class ProcessorBase implements IProcessor {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  protected constructor(_params?: any) {
-    //
-  }
+abstract class ProcessorBase implements IProcessor {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  constructor(opts?: any) {}
+
   abstract getData(): any;
   abstract process(): any;
 }
+
+export type IProcessorType<T extends abstract new (...opts: any[]) => any> = {
+  new (...opts: any[]): InstanceType<T>;
+};
+
+export default ProcessorBase;

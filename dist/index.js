@@ -12,6 +12,7 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessorBase = void 0;
+var DefaultProcessor_1 = require("./DefaultProcessor");
 var ProcessorBase_1 = require("./ProcessorBase");
 exports.ProcessorBase = ProcessorBase_1.default;
 var TypeProcessor = /** @class */ (function () {
@@ -41,10 +42,11 @@ var TypeProcessor = /** @class */ (function () {
     TypeProcessor.prototype.getActor = function (params) {
         this.updateTypeMapping();
         try {
-            var actor = new this.processorsMapping[this.getCurrentElement()](params);
-            if (!actor) {
+            var Actor = this.processorsMapping[this.getCurrentElement()] || DefaultProcessor_1.default;
+            if (!Actor) {
                 return;
             }
+            var actor = new Actor(params);
             return actor;
         }
         catch (e) {

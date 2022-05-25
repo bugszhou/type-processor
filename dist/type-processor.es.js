@@ -24,10 +24,23 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
+var DefaultProcessor = /** @class */ (function () {
+    function DefaultProcessor(options) {
+        this.elementData = null;
+        this.elementData = options;
+    }
+    DefaultProcessor.prototype.getData = function () {
+        return this.elementData;
+    };
+    DefaultProcessor.prototype.process = function () {
+        console.error("No Processor, currentElement is ".concat(this.getData()));
+    };
+    return DefaultProcessor;
+}());
+
 var ProcessorBase = /** @class */ (function () {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    function ProcessorBase(_params) {
-        //
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    function ProcessorBase(opts) {
     }
     return ProcessorBase;
 }());
@@ -59,10 +72,11 @@ var TypeProcessor = /** @class */ (function () {
     TypeProcessor.prototype.getActor = function (params) {
         this.updateTypeMapping();
         try {
-            var actor = new this.processorsMapping[this.getCurrentElement()](params);
-            if (!actor) {
+            var Actor = this.processorsMapping[this.getCurrentElement()] || DefaultProcessor;
+            if (!Actor) {
                 return;
             }
+            var actor = new Actor(params);
             return actor;
         }
         catch (e) {

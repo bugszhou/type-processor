@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ProcessorBase = /** @class */ (function () {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    function ProcessorBase(_params) {
-        //
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    function ProcessorBase(opts) {
     }
     return ProcessorBase;
 }());
