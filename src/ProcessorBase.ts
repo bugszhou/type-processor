@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export interface IProcessor<IReturn = any> {
   getData(): IReturn;
   process(): IReturn | Promise<IReturn>;
